@@ -1,7 +1,7 @@
 import React from 'react';
 
-function DownloadTable() {
-  return <div>DownloadTable</div>;
+function DownloadTable({ data }) {
+  return <div>{JSON.stringify(data)}</div>;
 }
 
 export default DownloadTable;
