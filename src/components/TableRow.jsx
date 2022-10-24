@@ -1,8 +1,20 @@
 import React from 'react';
 
-function TableRow({ name, device, path, status, isAvailable, isSelected }) {
+function TableRow({
+  name,
+  device,
+  path,
+  status,
+  isAvailable,
+  isSelected,
+  handleClick,
+}) {
+  const handleRowClick = () => {
+    isAvailable && handleClick(device);
+  };
+
   return (
-    <tr>
+    <tr onClick={handleRowClick}>
       <td>
         <input
           type={'checkbox'}

@@ -1,7 +1,7 @@
 import React from 'react';
 import TableRow from './TableRow';
 
-function SelectableTable({ rows }) {
+function SelectableTable({ rows, handleSelectRow }) {
   return (
     <table>
       <thead>
@@ -18,7 +18,7 @@ function SelectableTable({ rows }) {
       </thead>
       <tbody>
         {rows.map((row, i) => (
-          <TableRow key={i} {...row} />
+          <TableRow key={i} {...{ ...row, handleClick: handleSelectRow }} />
         ))}
       </tbody>
     </table>

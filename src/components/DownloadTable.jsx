@@ -17,10 +17,23 @@ function DownloadTable({ data }) {
 
   const [rowsState, setRowsState] = useState(initialState);
 
+  // select certain row by id (device)
+  const handleSelectRow = (device) => {
+    console.log({ device });
+    setRowsState(
+      rowsState.map((row) => {
+        if (row.isAvailable && row.device === device) {
+          row.isSelected = !row.isSelected;
+        }
+        return row;
+      })
+    );
+  };
+
   return (
     <div>
       <TableHeader count={selectedCount} />
-      <SelectableTable rows={rowsState} />
+      <SelectableTable rows={rowsState} handleSelectRow={handleSelectRow} />
     </div>
   );
 }
