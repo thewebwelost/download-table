@@ -1,4 +1,4 @@
-import DownloadTable from './components/DownloadTable';
+import DownloadTable from './components/DownloadTable/';
 import data from './assets/data.json';
 
 function App() {

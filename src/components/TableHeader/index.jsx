@@ -11,7 +11,7 @@ function TableHeader({
 }) {
   return (
     <header className={classes.header}>
-      <label className={classes.selectAll} for={'selectAllCheckbox'}>
+      <label className={classes.selectAll} htmlFor={'selectAllCheckbox'}>
         <input
           type={'checkbox'}
           id={'selectAllCheckbox'}
@@ -27,7 +27,7 @@ function TableHeader({
           }}
           checked={isChecked}
         />
-        Select all
+        {isChecked ? 'Deselect all' : 'Select all'}
       </label>
 
       <div>{count > 0 ? `Selected: ${count}` : 'None selected'}</div>
