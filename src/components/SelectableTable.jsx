@@ -17,7 +17,7 @@ function SelectableTable({ rows }) {
         </tr>
       </thead>
       <tbody>
-        {rowsState.map((row, i) => (
+        {rows.map((row, i) => (
           <TableRow key={i} {...row} />
         ))}
       </tbody>
