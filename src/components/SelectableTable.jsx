@@ -1,7 +1,7 @@
 import React from 'react';
 import TableRow from './TableRow';
 
-function SelectableTable({ rows, handleSelectRow }) {
+function SelectableTable({ rows, handleSelectRow, legend }) {
   return (
     <table>
       <thead>
@@ -11,7 +11,7 @@ function SelectableTable({ rows, handleSelectRow }) {
            * common field for any table. table headings come from raw data
            */}
           <th></th>
-          {Object.keys(rows[0]).map((title, i) => (
+          {legend.map((title, i) => (
             <th key={i}>{title}</th>
           ))}
         </tr>
