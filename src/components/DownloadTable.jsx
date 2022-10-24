@@ -60,7 +60,11 @@ function DownloadTable({ data }) {
 
   return (
     <div>
-      <TableHeader count={selectedCount} handleClick={handleSelectAll} />
+      <TableHeader
+        count={selectedCount}
+        handleClick={handleSelectAll}
+        isChecked={availableCount === selectedCount}
+      />
       <SelectableTable
         rows={rowsState}
         handleSelectRow={handleSelectRow}
