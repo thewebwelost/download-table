@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SelectableTable from './SelectableTable';
 import TableHeader from './TableHeader';
 
@@ -16,6 +16,10 @@ function DownloadTable({ data }) {
   }));
 
   const [rowsState, setRowsState] = useState(initialState);
+
+  useEffect(() => {
+    console.log({ rowsState });
+  }, [rowsState]);
 
   // select certain row by id (device)
   const handleSelectRow = (device) => {

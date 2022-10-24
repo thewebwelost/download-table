@@ -19,7 +19,7 @@ function TableRow({
         <input
           type={'checkbox'}
           onChange={(e) => e.preventDefault()}
-          checked={isSelected}
+          checked={isSelected || false}
           disabled={!isAvailable}
           aria-label={`select file ${name} from ${device} device`}
         />
