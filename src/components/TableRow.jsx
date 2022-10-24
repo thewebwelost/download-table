@@ -1,5 +1,7 @@
 import React from 'react';
 
+import classes from './TableRow.module.css';
+
 function TableRow({
   name,
   device,
@@ -14,8 +16,11 @@ function TableRow({
   };
 
   return (
-    <tr onClick={handleRowClick}>
-      <td>
+    <tr
+      onClick={handleRowClick}
+      className={isAvailable ? classes.row : classes.rowUnavailable}
+    >
+      <td className={classes.cell}>
         <input
           type={'checkbox'}
           onChange={(e) => e.preventDefault()}
@@ -24,11 +29,11 @@ function TableRow({
           aria-label={`select file ${name} from ${device} device`}
         />
       </td>
-      <td>{name}</td>
-      <td>{device}</td>
-      <td>{path}</td>
-      <td>
-        {isAvailable && <div className={'status available'} />}
+      <td className={classes.cell}>{name}</td>
+      <td className={classes.cell}>{device}</td>
+      <td className={classes.cell}>{path}</td>
+      <td className={classes.cell}>
+        {isAvailable && <div className={classes.statusAvailable} />}
         {status}
       </td>
     </tr>

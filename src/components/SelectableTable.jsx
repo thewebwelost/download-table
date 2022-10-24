@@ -1,6 +1,8 @@
 import React from 'react';
 import TableRow from './TableRow';
 
+import classes from './SelectableTable.module.css';
+
 function SelectableTable({ rows, handleSelectRow, legend }) {
   const renderTableHead = () => {
     return (
@@ -11,7 +13,9 @@ function SelectableTable({ rows, handleSelectRow, legend }) {
          */}
         <th></th>
         {legend.map((title, i) => (
-          <th key={i}>{title}</th>
+          <th key={i} className={classes.tableHead}>
+            {title}
+          </th>
         ))}
       </tr>
     );
@@ -32,7 +36,7 @@ function SelectableTable({ rows, handleSelectRow, legend }) {
   };
 
   return (
-    <table>
+    <table className={classes.table}>
       <thead>{rows.length > 0 && renderTableHead()}</thead>
       <tbody>{renderTableRows()}</tbody>
     </table>

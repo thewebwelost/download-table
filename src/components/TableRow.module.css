@@ -1,0 +1,32 @@
+.row {
+  cursor: pointer;
+  border: 1px solid lightgray;
+}
+
+.rowUnavailable {
+  opacity: 0.6;
+  border: 1px solid lightgray;
+}
+
+.row:hover {
+  background-color: whitesmoke;
+}
+
+.cell {
+  padding: 10px;
+  text-align: left;
+}
+
+.cell:last-child {
+  text-align: right;
+}
+
+.statusAvailable {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: limegreen;
+  border: 1px solid white;
+  border-radius: 100%;
+}

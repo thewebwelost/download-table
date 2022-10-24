@@ -1,0 +1,17 @@
+.table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  padding: 15px 10px;
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 1.15rem;
+  font-weight: 100;
+}
+
+.tableHead:last-child {
+  text-align: right;
+}

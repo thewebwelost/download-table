@@ -1,5 +1,7 @@
 import React from 'react';
 
+import classes from './TableHeader.module.css';
+
 function TableHeader({
   isChecked,
   isIndeterminate,
@@ -8,10 +10,11 @@ function TableHeader({
   handleDownload,
 }) {
   return (
-    <header>
-      <label>
+    <header className={classes.header}>
+      <label className={classes.selectAll} for={'selectAllCheckbox'}>
         <input
           type={'checkbox'}
+          id={'selectAllCheckbox'}
           ref={(input) => {
             // indeterminate state can be set only directly
             if (input) {

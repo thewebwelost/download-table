@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid lightgray;
+}
+
+.selectAll {
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.selectAll > input {
+  margin-right: 10px;
+}

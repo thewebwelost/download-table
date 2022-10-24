@@ -1,0 +1,19 @@
+* {
+  font-family: sans-serif;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 0;
+  border: 0;
+  border-radius: calc((15px + 15px + 14px) / 2);
+  font-size: 14;
+  line-height: 1;
+  color: white;
+  background-color: #0971f1;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #095af1;
+}
