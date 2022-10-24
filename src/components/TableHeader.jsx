@@ -1,12 +1,15 @@
 import React from 'react';
 
-function TableHeader({ isChecked, count }) {
+function TableHeader({ isChecked, count, handleClick }) {
   return (
     <header>
       <label>
         <input
           type={'checkbox'}
-          onChange={(e) => e.preventDefault()}
+          onChange={(e) => {
+            e.preventDefault();
+            handleClick();
+          }}
           checked={isChecked}
         />
         Select all

@@ -5,6 +5,7 @@ import TableHeader from './TableHeader';
 // data is passed as a parameter, but worth changing to fetch
 // will keep it simple for now
 function DownloadTable({ data }) {
+  const [availableCount, setAvailableCount] = useState(0);
   const [selectedCount, setSelectedCount] = useState(0);
   // adding id and row state to component state
   const initialState = data.map((row) => ({
@@ -20,14 +21,17 @@ function DownloadTable({ data }) {
     const stats = rowsState.reduce(
       (acc, item) => {
         if (item.isSelected) acc.selected++;
+        if (item.isAvailable) acc.available++;
         return acc;
       },
       {
         selected: 0,
+        available: 0,
       }
     );
 
     setSelectedCount(stats.selected);
+    setAvailableCount(stats.available);
   }, [rowsState]);
 
   // select certain row by id (device)
@@ -43,9 +47,20 @@ function DownloadTable({ data }) {
     );
   };
 
+  const handleSelectAll = () => {
+    const allSelected = rowsState.map((row) => {
+      if (row.isAvailable) {
+        row.isSelected = availableCount === selectedCount ? false : true;
+      }
+      return row;
+    });
+
+    setRowsState(allSelected);
+  };
+
   return (
     <div>
-      <TableHeader count={selectedCount} />
+      <TableHeader count={selectedCount} handleClick={handleSelectAll} />
       <SelectableTable
         rows={rowsState}
         handleSelectRow={handleSelectRow}
