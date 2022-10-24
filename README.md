@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Tech stack:
+
+React
+React hooks
+CSS-modules
+Jest
+React testing library
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Though it started with ViteJs, I had to move quickly to CRA because there are still issues to test Vite apps with Jest.
+I decided to use CSS modules to keep it simple, and not overcomplicate the solution.
 
 ## Available Scripts
 
