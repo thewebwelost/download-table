@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TableRow from './TableRow';
 
 function SelectableTable({ rows }) {
-  const [activeCount, setActiveCount] = useState(0);
-  const [selectedCount, setSelectedCount] = useState(0);
-  // adding id and state to component state
-  const initialState = rows.map((row) => ({
-    ...row,
-    isSelected: false,
-    isAvailable: row.status === 'available',
-    id: row.device,
-  }));
-
-  const [rowsState, setRowsState] = useState(initialState);
-
   return (
     <table>
       <thead>
