@@ -58,11 +58,31 @@ function DownloadTable({ data }) {
     setRowsState(allSelected);
   };
 
+  // reduce state to a list of items to be downloaded
+  const handleDownload = () => {
+    const res = rowsState.reduce((acc, row) => {
+      if (row.isSelected) {
+        acc.push({
+          device: row.device,
+          path: row.path,
+        });
+      }
+
+      return acc;
+    }, []);
+
+    const message =
+      res.length > 0 ? JSON.stringify(res) : 'Please select a file';
+
+    alert(message);
+  };
+
   return (
     <div>
       <TableHeader
         count={selectedCount}
-        handleClick={handleSelectAll}
+        handleSelectAll={handleSelectAll}
+        handleDownload={handleDownload}
         isChecked={availableCount === selectedCount}
       />
       <SelectableTable

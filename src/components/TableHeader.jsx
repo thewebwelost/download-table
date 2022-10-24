@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TableHeader({ isChecked, count, handleClick }) {
+function TableHeader({ isChecked, count, handleSelectAll, handleDownload }) {
   return (
     <header>
       <label>
@@ -8,7 +8,7 @@ function TableHeader({ isChecked, count, handleClick }) {
           type={'checkbox'}
           onChange={(e) => {
             e.preventDefault();
-            handleClick();
+            handleSelectAll();
           }}
           checked={isChecked}
         />
@@ -18,7 +18,7 @@ function TableHeader({ isChecked, count, handleClick }) {
       <div>{count > 0 ? `Selected: ${count}` : 'None selected'}</div>
 
       <div>
-        <button>Download selected</button>
+        <button onClick={handleDownload}>Download selected</button>
       </div>
     </header>
   );
