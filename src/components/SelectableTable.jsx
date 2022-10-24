@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TableRow from './TableRow';
 
 function SelectableTable({ rows }) {
+  const [activeCount, setActiveCount] = useState(0);
+  const [selectedCount, setSelectedCount] = useState(0);
+  // adding id and state to component state
+  const initialState = rows.map((row) => ({
+    ...row,
+    isSelected: false,
+    isAvailable: row.status === 'available',
+    id: row.device,
+  }));
+
+  const [rowsState, setRowsState] = useState(initialState);
+
   return (
     <table>
       <thead>
         <tr>
           {/*
            * first cell reserved for checkbox column, asuming it will be
-           * common field for any table
+           * common field for any table. table headings come from raw data
            */}
           <th></th>
           {Object.keys(rows[0]).map((title, i) => (
@@ -17,7 +29,7 @@ function SelectableTable({ rows }) {
         </tr>
       </thead>
       <tbody>
-        {rows.map((row, i) => (
+        {rowsState.map((row, i) => (
           <TableRow key={i} {...row} />
         ))}
       </tbody>

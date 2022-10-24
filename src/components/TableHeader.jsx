@@ -12,7 +12,7 @@ function TableHeader({ isChecked, count }) {
         Select all
       </label>
 
-      {count > 0 ? `Selected: ${count}` : 'None selected'}
+      <div>{count > 0 ? `Selected: ${count}` : 'None selected'}</div>
 
       <div>
         <button>Download selected</button>
