@@ -6,7 +6,14 @@ function SelectableTable({ rows }) {
     <table>
       <thead>
         <tr>
-          <th>test head</th>
+          {/*
+           * first cell reserved for checkbox column, asuming it will be
+           * common field for any table
+           */}
+          <th></th>
+          {Object.keys(rows[0]).map((title, i) => (
+            <th key={i}>{title}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
