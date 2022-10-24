@@ -35,7 +35,7 @@ function DownloadTable({ data }) {
     console.log({ device });
     setRowsState(
       rowsState.map((row) => {
-        if (row.isAvailable && row.device === device) {
+        if (row.isAvailable && row.id === device) {
           row.isSelected = !row.isSelected;
         }
         return row;
