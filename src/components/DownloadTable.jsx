@@ -1,7 +1,14 @@
 import React from 'react';
+import SelectableTable from './SelectableTable';
+import TableHeader from './TableHeader';
 
 function DownloadTable({ data }) {
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <div>
+      <TableHeader />
+      <SelectableTable />
+    </div>
+  );
 }
 
 export default DownloadTable;
