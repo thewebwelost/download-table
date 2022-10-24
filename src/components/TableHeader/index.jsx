@@ -10,10 +10,11 @@ function TableHeader({
   handleDownload,
 }) {
   return (
-    <header className={classes.header}>
+    <header className={classes.header} role={'header'}>
       <label className={classes.selectAll} htmlFor={'selectAllCheckbox'}>
         <input
           type={'checkbox'}
+          label={'Select all rows'}
           id={'selectAllCheckbox'}
           ref={(input) => {
             // indeterminate state can be set only directly
