@@ -1,4 +1,4 @@
-import { render, cleanup } from '@testing-library/react';
+import { screen, render, cleanup } from '@testing-library/react';
 import TableRow from '.';
 
 describe('<TableRow />', () => {
@@ -15,11 +15,13 @@ describe('<TableRow />', () => {
   afterEach(cleanup);
 
   it('should render properly', () => {
-    const { getByText } = render(<TableRow {...mockedProps} />);
-    // expect(getByText('name')).toBeDefined();
-    // expect(getByText('device')).toBeDefined();
-    // expect(getByText('path')).toBeDefined();
-    // expect(getByText('status')).toBeDefined();
+    render(<TableRow {...mockedProps} />);
+
+    expect(screen.getByText('name').textContent).toBe('name');
+    expect(screen.getByText('device').textContent).toBe('device');
+    expect(screen.getByText('path').textContent).toBe('path');
+    expect(screen.getByText('status').textContent).toBe('status');
+
     expect(true).toBe(true);
   });
 });
