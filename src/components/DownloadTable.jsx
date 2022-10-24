@@ -4,7 +4,7 @@ import TableHeader from './TableHeader';
 
 // data is passed as a parameter, but worth changing to fetch
 // will keep it simple for now
-function DownloadTable({ data }) {
+function DownloadTable({ data = [] }) {
   const [availableCount, setAvailableCount] = useState(0);
   const [selectedCount, setSelectedCount] = useState(0);
   // adding id and row state to component state
@@ -88,7 +88,7 @@ function DownloadTable({ data }) {
       <SelectableTable
         rows={rowsState}
         handleSelectRow={handleSelectRow}
-        legend={Object.keys(data[0])}
+        legend={data.length && Object.keys(data[0])}
       />
     </div>
   );
