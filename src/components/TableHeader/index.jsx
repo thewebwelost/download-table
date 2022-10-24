@@ -10,7 +10,7 @@ function TableHeader({
   handleDownload,
 }) {
   return (
-    <header className={classes.header} role={'header'}>
+    <header className={classes.header}>
       <label className={classes.selectAll} htmlFor={'selectAllCheckbox'}>
         <input
           type={'checkbox'}

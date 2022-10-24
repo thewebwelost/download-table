@@ -79,6 +79,7 @@ function DownloadTable({ data = [] }) {
   return (
     <div>
       <TableHeader
+        role={'tableHeader'}
         count={selectedCount}
         handleSelectAll={handleSelectAll}
         handleDownload={handleDownload}
@@ -86,6 +87,7 @@ function DownloadTable({ data = [] }) {
         isIndeterminate={selectedCount > 0 && availableCount !== selectedCount}
       />
       <SelectableTable
+        role={'table'}
         rows={rowsState}
         handleSelectRow={handleSelectRow}
         legend={data.length && Object.keys(data[0])}
