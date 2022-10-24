@@ -18,7 +18,9 @@ function TableRow({
   return (
     <tr
       onClick={handleRowClick}
-      className={isAvailable ? classes.row : classes.rowUnavailable}
+      className={`${classes.row}
+      ${!isAvailable && classes.unavailable} 
+      ${isSelected && classes.selected}`}
     >
       <td className={classes.cell}>
         <input

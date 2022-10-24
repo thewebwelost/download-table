@@ -3,13 +3,22 @@
   border: 1px solid lightgray;
 }
 
-.rowUnavailable {
-  opacity: 0.6;
-  border: 1px solid lightgray;
-}
-
 .row:hover {
   background-color: whitesmoke;
+}
+
+.unavailable {
+  opacity: 0.6;
+  cursor: unset;
+}
+
+.selected {
+  background-color: #0971f1;
+  color: white;
+}
+
+.selected:hover {
+  background-color: #095af1;
 }
 
 .cell {
