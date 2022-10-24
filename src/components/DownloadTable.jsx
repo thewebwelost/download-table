@@ -6,7 +6,7 @@ function DownloadTable({ data }) {
   return (
     <div>
       <TableHeader />
-      <SelectableTable />
+      <SelectableTable rows={data} />
     </div>
   );
 }

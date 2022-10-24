@@ -1,6 +1,7 @@
 import React from 'react';
+import TableRow from './TableRow';
 
-function SelectableTable() {
+function SelectableTable({ rows }) {
   return (
     <table>
       <thead>
@@ -9,9 +10,9 @@ function SelectableTable() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>test data</td>
-        </tr>
+        {rows.map((row, i) => (
+          <TableRow key={i} {...row} />
+        ))}
       </tbody>
     </table>
   );
