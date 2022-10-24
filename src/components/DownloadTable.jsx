@@ -36,7 +36,6 @@ function DownloadTable({ data = [] }) {
 
   // select certain row by id (device)
   const handleSelectRow = (device) => {
-    console.log({ device });
     setRowsState(
       rowsState.map((row) => {
         if (row.isAvailable && row.id === device) {
@@ -84,6 +83,7 @@ function DownloadTable({ data = [] }) {
         handleSelectAll={handleSelectAll}
         handleDownload={handleDownload}
         isChecked={availableCount === selectedCount}
+        isIndeterminate={selectedCount > 0 && availableCount !== selectedCount}
       />
       <SelectableTable
         rows={rowsState}

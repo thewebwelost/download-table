@@ -1,11 +1,23 @@
 import React from 'react';
 
-function TableHeader({ isChecked, count, handleSelectAll, handleDownload }) {
+function TableHeader({
+  isChecked,
+  isIndeterminate,
+  count,
+  handleSelectAll,
+  handleDownload,
+}) {
   return (
     <header>
       <label>
         <input
           type={'checkbox'}
+          ref={(input) => {
+            // indeterminate state can be set only directly
+            if (input) {
+              input.indeterminate = isIndeterminate;
+            }
+          }}
           onChange={(e) => {
             e.preventDefault();
             handleSelectAll();
