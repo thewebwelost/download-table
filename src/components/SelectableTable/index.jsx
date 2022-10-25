@@ -6,7 +6,7 @@ import classes from './SelectableTable.module.css';
 function SelectableTable({ rows, handleSelectRow, legend }) {
   const renderTableHead = () => {
     return (
-      <tr>
+      <tr role={'row'}>
         {/*
          * first cell reserved for checkbox column, asuming it will be
          * common field for any table. table headings come from raw data

@@ -14,7 +14,7 @@ function TableHeader({
       <label className={classes.selectAll} htmlFor={'selectAllCheckbox'}>
         <input
           type={'checkbox'}
-          label={'Select all rows'}
+          label={`${isChecked ? 'Des' : 'S'}elect all rows`}
           id={'selectAllCheckbox'}
           ref={(input) => {
             // indeterminate state can be set only directly

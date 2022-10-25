@@ -17,12 +17,13 @@ function TableRow({
 
   return (
     <tr
+      role={'row'}
       onClick={handleRowClick}
       className={`${classes.row}
       ${!isAvailable && classes.unavailable} 
       ${isSelected && classes.selected}`}
     >
-      <td className={classes.cell}>
+      <td className={classes.cell} disabled={!isAvailable}>
         <input
           type={'checkbox'}
           onChange={(e) => e.preventDefault()}
